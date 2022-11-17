@@ -28,13 +28,14 @@ const ArtistForm = ({handleArtistSubmit}) => {
     const handleChange = (e) => {
         setArtistForm({...artistForm, [e.target.name]: e.target.value})
     };
-
-
+    // const handleAlbumChange = (e) => {
+    //     setArtistForm({...artistForm, [e.target.albums]: e.target.value})
+    // }
   return (
     <div>Add a New Artist
         <form onSubmit={handleSubmit}>
             <input type="text" placeholder="name" value={artistForm.name} name="name" onChange={handleChange}/>
-            <input type="text" placeholder="albums" value={artistForm.albums} albums="albums" onChange={handleChange}/>
+            <input type="text" placeholder="albums" value={artistForm.albums} name="albums" onChange={handleChange}/>
             <button>Create Artist</button>
         </form>
     </div>

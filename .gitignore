@@ -89,3 +89,20 @@ const Users = () => {
     )
 }
 export default Users;
+////////
+    // const [artists, setArtists] = useState([])
+    // useEffect(() => {
+    //     fetch("http://localhost:9292/artists")
+    //         .then(r => r.json())
+    //         .then((artist) => setArtists(artist))
+    // }, []);
+
+    // const artistList = artists.map((artist) => (
+    //     <Artist artist={artist} key={artist.id}/>
+    // ))
+   
+    // const handleArtistSubmit = (art) => {
+    //     setArtists(art)
+    // }
+//  <ArtistForm  handleArtistSubmit={handleArtistSubmit}/>
+//     {artistList}

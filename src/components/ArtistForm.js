@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 
-const ArtistForm = ({handleArtistSubmit}) => {
+const ArtistForm = ({recordlabel, handleArtistSubmit}) => {
     const [artistForm, setArtistForm] = useState({
         name: '',
-        albums: ''
+        albums: '',
+        is_signed: false,
+        record_label_id: recordlabel
     });
+
     const handleSubmit = (e) => {
         e.preventDefault();
         fetch('http://localhost:9292/artists', {
@@ -20,7 +23,8 @@ const ArtistForm = ({handleArtistSubmit}) => {
             handleArtistSubmit(art);
             setArtistForm({
                 name: '',
-                albums: ''
+                albums: '',
+                is_signed: false
             })
         })
     }
@@ -28,17 +32,15 @@ const ArtistForm = ({handleArtistSubmit}) => {
     const handleChange = (e) => {
         setArtistForm({...artistForm, [e.target.name]: e.target.value})
     };
-    // const handleAlbumChange = (e) => {
-    //     setArtistForm({...artistForm, [e.target.albums]: e.target.value})
-    // }
+    
   return (
-    <table>Add a New Artist
+    <div>Add a New Artist
         <form onSubmit={handleSubmit}>
             <input type="text" placeholder="name" value={artistForm.name} name="name" onChange={handleChange}/>
             <input type="text" placeholder="albums" value={artistForm.albums} name="albums" onChange={handleChange}/>
             <button>Create Artist</button>
         </form>
-    </table>
+    </div>
   )
 }
 export default ArtistForm;

@@ -8,23 +8,21 @@ const ArtistList = ({recordlabel, seeArtists}) => {
     const handleArtistSubmit = (artist) => {
         setArtists([...artists, artist])
     }
+
     const onDeleteArtist = (id) => {
-        const updatedArtists = artists.filter(artist => artist.id !==id);
+        const updatedArtists = artists.filter(artist => artist.id !== id);
         setArtists(updatedArtists)
     }
-    // const onEditArtist = () {
-
-    // }
     if(seeArtists === true){
         return(
-            <tr>
+            <div>
                 <ArtistForm recordlabel={recordlabel.id} handleArtistSubmit={handleArtistSubmit}/>
-                <tr>
-                    <th>
-                        {artists.map((artist) => (<Artist key={artist.id} artist={artist} onDeleteArtist={onDeleteArtist}/>))}
-                    </th>
-                </tr>
-            </tr>
+                <div>
+                    <p>
+                        {artists.map((artist) => (<Artist key={artist.id} artist={artist} onDeleteArtist={onDeleteArtist} />))}
+                    </p>
+                </div>
+            </div>
         )
     }
 }

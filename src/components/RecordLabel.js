@@ -8,17 +8,14 @@ const RecordLabel = ({recordlabel}) => {
     const handleArtistClick = () => {
         setSeeArtists(!seeArtists)
     }
-    
+
   return (
-    <div>RecordLabel
-        <thead>
-            <tr>
-                <th>{recordlabel.name}</th>
-                <th>
-                    <button onClick={handleArtistClick}>{seeArtists ? 'Hide Artists' : 'See Artists'}</button>
-                </th>
-            </tr>
-        </thead>
+    <div>
+        <div>
+            <header>Record Label:
+                <h1>{recordlabel.name}</h1><button onClick={handleArtistClick}>{seeArtists ? 'Hide Artists' : 'See Artists'}</button>
+            </header>
+        </div>
         <ArtistList recordlabel={recordlabel} seeArtists={seeArtists}/>
     </div>
   )

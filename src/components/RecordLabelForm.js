@@ -35,5 +35,4 @@ const RecordLabelForm = ({handleRecordLabelSubmit}) => {
     </div>
   )
 }
-
 export default RecordLabelForm;

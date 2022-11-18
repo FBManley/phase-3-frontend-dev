@@ -39,7 +39,7 @@ function App() {
 //     {artistList}
   return (
    <div>
-    welcome to SignMe! A talent finding app for prospective Record Labels.
+    <h2>Welcome to SignMe! A talent finding app for prospective Record Labels.</h2>
    <RecordLabelForm handleRecordLabelSubmit={handleRecordLabelSubmit}/>
    {recordlabelsList}
    </div>

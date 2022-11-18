@@ -7,7 +7,7 @@ const ArtistForm = ({handleArtistSubmit}) => {
     });
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch('http://localhost:9292/artist', {
+        fetch('http://localhost:9292/artists', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -32,13 +32,13 @@ const ArtistForm = ({handleArtistSubmit}) => {
     //     setArtistForm({...artistForm, [e.target.albums]: e.target.value})
     // }
   return (
-    <div>Add a New Artist
+    <table>Add a New Artist
         <form onSubmit={handleSubmit}>
             <input type="text" placeholder="name" value={artistForm.name} name="name" onChange={handleChange}/>
             <input type="text" placeholder="albums" value={artistForm.albums} name="albums" onChange={handleChange}/>
             <button>Create Artist</button>
         </form>
-    </div>
+    </table>
   )
 }
 export default ArtistForm;

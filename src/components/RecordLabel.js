@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import ArtistList from './ArtistList';
+import ArtistForm from './ArtistForm';
 
 const RecordLabel = ({recordlabel}) => {
 //    const {artists:}  = recordlabel 
@@ -8,7 +9,7 @@ const RecordLabel = ({recordlabel}) => {
     const handleArtistClick = () => {
         setSeeArtists(!seeArtists)
     }
-
+  
   return (
     <div>
         <div>
@@ -17,6 +18,7 @@ const RecordLabel = ({recordlabel}) => {
             </header>
         </div>
         <ArtistList recordlabel={recordlabel} seeArtists={seeArtists}/>
+        <ArtistForm />
     </div>
   )
 }

@@ -21,6 +21,7 @@ function App() {
     const handleRecordLabelSubmit = (recordlabel) => {
         setRecordLabels(recordlabel)
     }
+   
     // const [artists, setArtists] = useState([])
     // useEffect(() => {
     //     fetch("http://localhost:9292/artists")

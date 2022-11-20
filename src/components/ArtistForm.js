@@ -10,6 +10,7 @@ const ArtistForm = ({recordlabel, handleArtistSubmit}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        
         fetch('http://localhost:9292/artists', {
             method: 'POST',
             headers: {
@@ -19,12 +20,12 @@ const ArtistForm = ({recordlabel, handleArtistSubmit}) => {
             body: JSON.stringify(artistForm)
         })
         .then(r => r.json())
-        .then(art => {
-            handleArtistSubmit(art);
+        .then(artist => {
+            handleArtistSubmit(artist);
             setArtistForm({
                 name: '',
                 albums: '',
-                is_signed: false
+                is_signed: false,
             })
         })
     }
@@ -44,3 +45,4 @@ const ArtistForm = ({recordlabel, handleArtistSubmit}) => {
   )
 }
 export default ArtistForm;
+// send state as cb back to parent->ArtistList->RecordLabel->App to update the recordlabels state 

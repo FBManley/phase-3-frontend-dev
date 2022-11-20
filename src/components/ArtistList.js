@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ArtistForm from './ArtistForm';
 import Artist from './Artist';
+import { v4 as uuidv4 } from 'uuid';
 
 const ArtistList = ({recordlabel, seeArtists}) => {
     const [artists, setArtists] = useState(recordlabel.artists)
@@ -19,7 +20,7 @@ const ArtistList = ({recordlabel, seeArtists}) => {
                 <ArtistForm recordlabel={recordlabel.id} handleArtistSubmit={handleArtistSubmit}/>
                 <div>
                     <p>
-                        {artists.map((artist) => (<Artist key={artist.id} artist={artist} onDeleteArtist={onDeleteArtist} />))}
+                        {artists.map((artist) => (<Artist key={uuidv4()} artist={artist} onDeleteArtist={onDeleteArtist} />))}
                     </p>
                 </div>
             </div>
@@ -27,3 +28,4 @@ const ArtistList = ({recordlabel, seeArtists}) => {
     }
 }
 export default ArtistList;
+// newly added artist isnt getting id / cant be updated in any waywithout re-render

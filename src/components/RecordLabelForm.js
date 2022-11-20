@@ -16,8 +16,8 @@ const RecordLabelForm = ({handleRecordLabelSubmit}) => {
             body: JSON.stringify(recordlabelForm)
         })
         .then(r => r.json())
-        .then(rl => {
-            handleRecordLabelSubmit(rl);
+        .then(recordlabel => {
+            handleRecordLabelSubmit(recordlabel);
             setRecordLabelForm({
                 name: ''
             })
@@ -37,3 +37,6 @@ const RecordLabelForm = ({handleRecordLabelSubmit}) => {
   )
 }
 export default RecordLabelForm;
+// in child
+// onChange={(e) => e.target.value}
+// order to update parents state, comp requires uniqueid

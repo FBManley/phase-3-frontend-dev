@@ -1,6 +1,4 @@
 import React, {useState} from 'react'
-
-// import React, { useState } from "react";
 // show record label list? button for crud
 
 const Artist = ({artist, onDeleteArtist}) => {
@@ -34,7 +32,7 @@ const Artist = ({artist, onDeleteArtist}) => {
             <ul>
                 <h3>Artist: {artist.name}:</h3>
                 <li>Album: "{artist.albums}"</li>
-                <button onClick={handleClick}>{isSigned ? "Yes" : "No"}</button>
+                <button onClick={handleClick}>{isSigned ? "Signed" : "Unsigned"}</button>
                 <button onClick={handleDelete}>delete artist</button>
             </ul>
         </div>

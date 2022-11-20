@@ -1,5 +1,5 @@
 EVERYTHING WORKS EXCEPT SEEING/DELETING/UPDATING A NEWLY CREATED ARTIST
-
+UNABLE TO PASS CHILD 
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

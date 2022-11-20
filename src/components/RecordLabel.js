@@ -8,7 +8,6 @@ const RecordLabel = ({recordlabel}) => {
     const handleArtistClick = () => {
         setSeeArtists(!seeArtists)
     }
-  
   return (
     <div>
         <div>

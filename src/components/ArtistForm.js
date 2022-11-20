@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+// created artist does not have record_label_id
 const ArtistForm = ({recordlabel, handleArtistSubmit}) => {
     const [artistForm, setArtistForm] = useState({
         name: '',
@@ -7,10 +7,9 @@ const ArtistForm = ({recordlabel, handleArtistSubmit}) => {
         is_signed: false,
         record_label_id: recordlabel
     });
-
+    
     const handleSubmit = (e) => {
         e.preventDefault();
-        
         fetch('http://localhost:9292/artists', {
             method: 'POST',
             headers: {

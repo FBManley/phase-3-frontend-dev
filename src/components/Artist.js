@@ -1,9 +1,8 @@
 import React, {useState} from 'react'
-// show record label list? button for crud
 
-const Artist = ({artist, onDeleteArtist}) => {
+const Artist = ({artist, onDeleteArtist, recordlabel}) => {
     const [isSigned, setIsSigned] = useState(artist.is_signed)
-
+    console.log(recordlabel)
     const handleDelete = () => {
         fetch(`http://localhost:9292/artists/${artist.id}`, {
             method: 'DELETE',
@@ -25,7 +24,6 @@ const Artist = ({artist, onDeleteArtist}) => {
         .then(r => r.json())
         .then(data => setIsSigned(data.is_signed))
     }
-  
   return (
     <div>
         <div>
@@ -36,7 +34,6 @@ const Artist = ({artist, onDeleteArtist}) => {
                 <button onClick={handleDelete}>delete artist</button>
             </ul>
         </div>
-        
     </div>
   )
 }

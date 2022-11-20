@@ -4,7 +4,7 @@ const RecordLabelForm = ({handleRecordLabelSubmit}) => {
     const [recordlabelForm, setRecordLabelForm] = useState({
         name: ''
     })
-    
+      
     const handleSubmit = (e) => {
         e.preventDefault();
         fetch('http://localhost:9292/record_labels', {

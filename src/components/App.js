@@ -1,7 +1,7 @@
 import React, {useEffect, useState } from "react";
 import '../App.css';
-import { v4 as uuidv4 } from 'uuid';
 import RecordLabel from "./RecordLabel";
+import { v4 as uuidv4 } from 'uuid';
 import RecordLabelForm from "./RecordLabelForm";
 
 function App() {
@@ -19,6 +19,7 @@ function App() {
     
     const handleRecordLabelSubmit = (recordlabel) => {
         setRecordLabels(recordlabel)
+        // needs to reflect updated list [...recordlabel, newartist]
     }
    
   return (

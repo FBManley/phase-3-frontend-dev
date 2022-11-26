@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 const ArtistList = ({recordlabel, seeArtists}) => {
     const [artists, setArtists] = useState(recordlabel.artists)
-    // starting list state with props.artists, may not allow change in state from handleArtistSubmit.// newly added artist isnt getting id / cant be updated in any waywithout re-render
+
     const handleArtistSubmit = (artist) => {
         setArtists([...artists, artist])
     }
@@ -20,7 +20,7 @@ const ArtistList = ({recordlabel, seeArtists}) => {
                 <ArtistForm recordlabel={recordlabel.id} handleArtistSubmit={handleArtistSubmit}/>
                 <div>
                     <p>
-                        {artists.map((artist) => (<Artist key={uuidv4()} artist={artist} onDeleteArtist={onDeleteArtist} recordlabel={recordlabel.id}/>))}
+                        {artists.map((artist) => (<Artist  key={uuidv4()} artist={artist} onDeleteArtist={onDeleteArtist} recordlabel={recordlabel.id}/>))}
                     </p>
                 </div>
             </div>

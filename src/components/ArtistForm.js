@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-// created artist does not have record_label_id
+
 const ArtistForm = ({recordlabel, handleArtistSubmit}) => {
     const [artistForm, setArtistForm] = useState({
         name: '',
@@ -21,6 +21,7 @@ const ArtistForm = ({recordlabel, handleArtistSubmit}) => {
         .then(r => r.json())
         .then(artist => {
             handleArtistSubmit(artist);
+            
             setArtistForm({
                 name: '',
                 albums: '',
